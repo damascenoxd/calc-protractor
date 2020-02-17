@@ -40,6 +40,12 @@ class Calculadora {
     getResult() {
         return this.result.getText();
     }
+    getFirstResultTable() {
+        let row = element.all(by.xpath("//*[@ng-repeat='result in memory']"));
+        let cells = row.all(by.tagName('td'));
+
+        return cells.get(2).getText();
+    }
 }
 
 module.exports = Calculadora;
